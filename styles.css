@@ -4,79 +4,104 @@ body{
    margin-left: 0;
    margin-right: 0;
 }
-li{
-    list-style-type: none;
-    width:50%;
-    text-align: center;
 
-    
-   
-}
-ul {
+
+.top-nav{
     background-color: black;
-    display: flex;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: 100%;
+    position: relative;
+    right:44%;
+    border-style: groove;
+    border-radius: 1ch;
+}
+.top-nav a {
+    float: left;
+     color: white;
+    text-decoration: none;
+
+}
+.top-nav a:hover{
+    background-color: rgb(188, 202, 92);
     
 }
-a{
-color: white;
-display:inline-block;
-text-decoration: none;
-width: 80px;
-height: 35px;
-padding-top: 11%;
-font-size: 1.2rem;
+.home{
+    padding:16px 25px 16px 25px;
 }
-.header{
+.bookings{
+   
+        padding:16px 20px 16px 20px;
+    
+}
+header{
 
 display: flex;
 background-color: rgb(240, 240, 240);
 justify-content:space-between;
+margin-bottom: 100px;
+}
 
-}
-.navbar{
-
-    width: 20%;
-    margin-right: 42%;
-   
-}
-li:hover{
-   background-color: grey;
-}
 .logo{
-margin-left: 3%;
-margin-top: 2px;
+position: relative;
+left:30px;
+padding-top: 2px;
 
 }
-.description{
 
-    font-size: 2rem;
-    margin-left: 41%;
-    margin-top: 3%;
-}
+
 .desk-layout{
 
-    display: flex;
-    background-color: rgb(237, 234, 234);
-    width:36%;
-    height:300px;
+   
+    background-color: rgb(244, 244, 244);
+    width:80%;
+    border-radius: 2ch;
     margin:auto;
-    flex-wrap: wrap;
+ 
 
 }
+.seat:hover{
+    background-color: rgb(112, 239, 110);
+}
+.select-desk{
+    border-radius: 3ch;
+    width: 40%;
+    margin:auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 20px 57px 0 rgba(51, 51, 51, 0.1);
+    background-color:rgb(255, 255, 255) ;
+
+}
+.select-location{
+    margin:auto;
+    width: 40%;
+}
+.select-desk-footer{
+   
+    margin:20px auto 20px auto;
+    text-align: center;
+   width:40%;
+}
+.seats-row{
+display: flex;
+padding:20px 38px 20px 38px;
+}
 .seat{
-    width:5.5%;
+    width:6%;
     height:25px;
-    margin:10px 10px 0 10px;
+    margin:0px 10px 0px 10px;
     background-color: white;
     text-align: center;
+    font-size: 70%;
+    padding-top:6px;
+    border-radius: 1ch;
 }
+
 .A-5{
     background-color: rgb(240, 117, 117);
 }
-[class^="B-"]{
-    
+.B-7{
+    background-color: rgb(240, 117, 117);
+}
+.C-2{
+    background-color:  rgb(208, 204, 204);
+
 }
