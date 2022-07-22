@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='./styles.css' />
     <title>Document</title>
+    <script src='./js/index.js' defer></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src='./logo2.png' alt='sprinklr logo' width='200' height='44.5'>
+            <img src='./logo2.png' alt='sprinklr logo' width='200' height='54.5'>
         </div>
 
              <nav class="top-nav">
@@ -26,21 +27,41 @@
 
 
         </form>
+
+
 <section class="select-location">
-
-
-        <label for="cars">Choose a car:</label>
+     
+<label for="location" class="location-label">Select Location : </label>
    
+<select name="location" id="location">
+  <option value="Bangalore" class="option-location">Bangalore</option>
+  <option value="Gurgaon" class="option-location" >Gurgaon</option>
 
-<select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
 </select>
+<br/>
+<input type="submit" class="submit-location">
+
 </section>
-    <section class="select-desk">
-        
+
+
+
+<section class="select-date hide">
+
+
+    
+        <label for="date-selected" >Select Date:</label>
+        <input type="date" id="date-selected" name="date-selected"><br/>
+        <input type="submit" class="submit-date">
+    
+    
+    </section>
+    
+    
+  
+
+
+    <section class="select-desk hide">
+        <h1 class="select-desk-header">Choose a desk</h1>
         <div class="desk-layout">
             <section class="row-A seats-row">
             <div class="A-1 seat A">A1</div>
@@ -79,7 +100,7 @@
             <div class="C-10 seat C">C10</div>
         </section>
        </div>
-       <h1 class="select-desk-footer">Choose a desk</h1>
+       
     </section>
    
 </body>
