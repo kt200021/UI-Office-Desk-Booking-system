@@ -1,4 +1,7 @@
 import { bangaloreData } from "./data.js";
+
+import bookings, { addBooking } from "./bookingsData.js";
+
 const locationElement = document.querySelector(".select-location");
 const dateElement = document.querySelector(".select-date");
 const deskElement = document.querySelector(".select-desk");
@@ -6,6 +9,11 @@ const seatElements = document.querySelectorAll(".seat");
 let locationSelected = document.querySelector("#location");
 let monthSelected;
 let dateSelected = document.querySelector("#date-selected");
+let locationValue;
+let monthValue;
+let dateValue;
+let deskRow;
+let deskNumber;
 
 const Show = (element) => {
   element.classList.remove("hide");
@@ -56,6 +64,16 @@ submitDate.addEventListener("click", (e) => {
     });
   }
 });
+const HomePage = () => {
+  locationValue = "";
+  monthValue = "";
+  dateValue = "";
+  deskRow = "";
+  deskNumber = "";
+  Hide(deskElement);
+  Show(locationElement);
+};
+
 submitDesk.addEventListener("click", (e) => {
   // dateSelected = e.target.value;
   // console.log(date);
@@ -64,24 +82,45 @@ submitDesk.addEventListener("click", (e) => {
   console.log("Location Selected:", locationValue);
   console.log("date selected:", dateValue, "/", monthValue, "/2022");
   console.log("seat selected", deskRow + deskNumber);
-  alert("desk selected");
+  let newBooking = {
+    row: deskRow,
+    col: deskNumber,
+    location: locationValue,
+    month: monthValue,
+    day: dateValue,
+  };
+  addBooking(newBooking);
+  //   bookings[monthValue] = bookings[monthValue] ? bookings[monthValue] : {};
+  //   bookings[monthValue][dateValue] = {
+  //     row: deskRow,
+  //     col: deskNumber,
+  //     location: locationValue,
+  //   };
+  //   bookings[5] = 4;
+  //   console.log(bookings[monthValue][dateValue]);
+  //console.log(bookings);
+  //console.log(JSON.stringify(bookings));
+  //   let y = getResult(bookings);
+  //   console.log(y);
+  //   let s = arrayToString(y);
+  //   console.log(s);
+  //localStorage.setItem("bookings", JSON.stringify(bookings));
+  let y = localStorage.getItem("bookings");
+  //console.log(y);
+  //console.log(JSON.parse(y));
+  console.log(y);
+  HomePage();
 });
-
-let locationValue;
-let monthValue;
-let dateValue;
-let deskRow;
-let deskNumber;
 
 seatElements.forEach((element) => {
   element.addEventListener("click", (e) => {
     // dateSelected = e.target.value;
     // console.log(date);
-    console.log(e.target);
+    // console.log(e.target);
     let prevColor = e.target.style.backgroundColor;
     if (prevColor == "white") {
       locationValue = locationSelected.value;
-      console.log(e.target);
+      // console.log(e.target);
 
       let deskString = e.target.innerText;
       deskRow = deskString[0];
@@ -95,17 +134,17 @@ seatElements.forEach((element) => {
     }
   });
 });
-// const mouseEnterEl = seatElements.forEach((element) => {
-//   element.addEventListener("mouseenter", (e) => {
-//     let prevColor = e.target.style.backgroundColor;
-//     if (prevColor == "white") e.target.style.backgroundColor = "green";
-//   });
-// });
-// const mouseLeaveEl = seatElements.forEach((element) => {
-//   element.addEventListener("mouseleave", (e) => {
-//     let prevColor = e.target.style.backgroundColor;
-//     if (prevColor == "green") e.target.style.backgroundColor = "white";
-//   });
-// });
+const mouseEnterEl = seatElements.forEach((element) => {
+  element.addEventListener("mouseenter", (e) => {
+    let prevColor = e.target.style.backgroundColor;
+    if (prevColor == "white") e.target.style.backgroundColor = "green";
+  });
+});
+const mouseLeaveEl = seatElements.forEach((element) => {
+  element.addEventListener("mouseleave", (e) => {
+    let prevColor = e.target.style.backgroundColor;
+    if (prevColor == "green") e.target.style.backgroundColor = "white";
+  });
+});
 
-export { locationValue, dateValue, monthValue, deskNumber, deskRow };
+export { locationValue, dateValue, monthValue, deskNumber, deskRow, bookings };

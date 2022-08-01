@@ -3,15 +3,8 @@
 //2->white
 //3->green
 const DeskData = () => {
-  const deskList = [{}];
-  const A = [1, 2, 1, 2, 2, 2, 2, 1, 2, 1];
-  const B = [2, 2, 1, 0, 2, 2, 1, 2, 2, 1];
-  const C = [0, 2, 2, 1, 2, 2, 2, 2, 1, 1];
-  const deskObj = {
-    A: A,
-    B: B,
-    C: C,
-  };
+  const deskList = [];
+
   for (let index = 1; index <= 30; index++) {
     deskList.push(deskObj);
   }
@@ -52,6 +45,6 @@ const YearData = (deskList) => {
   return yearObj;
 };
 
-const bangaloreData = YearData(deskList);
+const calendarData = YearData(deskList);
 //console.log(bangalore);
-export { bangaloreData };
+export { calendarData };

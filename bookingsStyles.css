@@ -1,0 +1,75 @@
+html{
+    font-size: 62.5%;
+}
+
+
+body{
+   margin-top: 0;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+
+.top-nav{
+    background-color: black;
+    position: relative;
+    right:44%;
+    border-style: groove;
+    border-radius: 0.8rem;
+}
+.top-nav a {
+    float: left;
+     color: white;
+    text-decoration: none;
+    font-size: 2.5rem;
+
+}
+.top-nav a:hover{
+    background-color: rgb(188, 202, 92);
+    
+}
+.home{
+    padding:16px 25px 16px 25px;
+}
+.bookings{
+   
+        padding:16px 20px 16px 20px;
+    
+}
+header{
+
+display: flex;
+background-color: rgb(240, 240, 240);
+justify-content:space-between;
+margin-bottom: 100px;
+}
+
+.logo{
+position: relative;
+left:30px;
+padding-top: 3.5px;
+
+}
+
+.calendar{
+
+    margin:auto;
+    
+}
+
+.calendar td,th{
+   text-align: center;
+    background-color:rgb(238, 235, 235);
+    align-items: center;
+    width:60px;
+    height: 60px;
+    padding-top: 15px;
+    font-size: 2rem;
+}
+.month{
+   text-align: center;
+   font-size: 2rem;
+}
+.hide{
+    display: none;
+}
