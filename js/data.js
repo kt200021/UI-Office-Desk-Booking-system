@@ -53,5 +53,8 @@ const YearData = (deskList) => {
 };
 
 const bangaloreData = YearData(deskList);
+
+localStorage.getItem("blrData") === null
+  ? localStorage.setItem("blrData", JSON.stringify(bangaloreData))
+  : null;
 //console.log(bangalore);
-export { bangaloreData };

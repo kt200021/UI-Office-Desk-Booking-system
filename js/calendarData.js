@@ -5,10 +5,6 @@
 const DeskData = () => {
   const deskList = [];
 
-  for (let index = 1; index <= 30; index++) {
-    deskList.push(deskObj);
-  }
-
   return deskList;
 };
 const deskList = DeskData();

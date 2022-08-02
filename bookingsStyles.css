@@ -51,6 +51,14 @@ padding-top: 3.5px;
 
 }
 
+
+
+.calendar-section{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .calendar{
 
     margin:auto;
@@ -61,15 +69,60 @@ padding-top: 3.5px;
    text-align: center;
     background-color:rgb(238, 235, 235);
     align-items: center;
-    width:60px;
+    width:80px;
     height: 60px;
     padding-top: 15px;
     font-size: 2rem;
+
 }
-.month{
+.calendar-body td:hover {
+    cursor: pointer;
+    background-color:  beige;
+}
+.seat-overlay{
+    position: fixed;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(16, 1, 1, 0.5);
+
+}
+.overlay-message{
+    background-color: rgb(244, 244, 244);
+    display: inline-block;
+    position: relative;
+    top:300px;
+    width: 20%;
+    left:40%;
+    box-shadow: 0 20px 57px 0 rgba(51, 51, 51, 0.1);
+    border-radius: 2rem;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.calendar-month{
+
    text-align: center;
    font-size: 2rem;
 }
 .hide{
     display: none;
+}
+.prev-month{
+
+margin-right: 20px;
+}
+.next-month{
+margin-left: 20px;
+}
+
+.hide{
+    display: none;
+}
+.seat-no-overlay{
+
+    font-size: 2rem;
+    color:rgb(12, 10, 10)
 }

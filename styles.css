@@ -67,7 +67,7 @@ padding-top: 3.5px;
 }
 .select-desk{
     border-radius: 2rem;
-    width: 60%;
+    width: 84%;
     margin:auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -95,7 +95,7 @@ padding:20px 38px 20px 38px;
     padding-bottom:50px;
 }
 .seat{
-    width:8%;
+    width:10%;
     height:50px;
     margin:0px 10px 0px 10px;
     background-color: white;

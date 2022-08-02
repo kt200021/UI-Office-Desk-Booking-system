@@ -5,18 +5,23 @@
 const bookings = {};
 //console.log(bangalore);
 const addBooking = (desk) => {
-  let bookings = localStorage.getItem("bookings");
   //console.log(bookings);
-  bookings = JSON.parse(bookings);
+  const bookings = JSON.parse(localStorage.getItem("bookings"));
+
   const { row, col, location, month, day } = desk;
+
   bookings[month] = bookings[month] ? bookings[month] : {};
   bookings[month][day] = {
     row: row,
     col: col,
   };
   localStorage.setItem("bookings", JSON.stringify(bookings));
+
   //console.log(bookings);
 };
 
-export default bookings;
+if (JSON.parse(localStorage.getItem("bookings")) === null) {
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+}
+
 export { addBooking };
