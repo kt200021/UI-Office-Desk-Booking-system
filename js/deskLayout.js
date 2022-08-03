@@ -4,51 +4,62 @@ const deskColor = {
   2: "white",
   3: "green",
 };
+
+let deskRow;
+let deskNumber;
+let locationValue;
 const displayDesk = (deskLayout) => {
+  deskNumber = "";
+  deskRow = "";
   for (let row in deskLayout) {
     const rowSection = document.querySelector(`.row-${row}`);
+    rowSection.innerHTML = "";
     // console.log(row);
     deskLayout[row].forEach((element, i) => {
       const seat = document.createElement("div");
-      seat.innerText = row + (i + 1);
+      const text = document.createElement("span");
+      text.innerText = row + (i + 1);
+      text.classList.add("seat-text");
+      seat.append(text);
+      // console.log(seat);
       seat.classList.add(`seat`);
       seat.classList.add(`${row}`);
       seat.classList.add(`${row}-${i + 1}`);
-      seat.setAttribute("data-number", i);
+      seat.setAttribute("data-number", i + 1);
       seat.setAttribute("data-color", element);
       seat.style.backgroundColor = deskColor[element];
       rowSection.appendChild(seat);
     });
   }
 };
-let prevSelected;
-let deskRow;
-let deskNumber;
-let locationValue;
+
 let locationSelected = "Bangalore";
 const eventListeners = () => {
+  let prevSelected;
   const deskElement = document.querySelector(".select-desk");
   const seatElements = document.querySelectorAll(".seat");
+  console.log(prevSelected);
   deskElement.addEventListener("click", (e) => {
     // console.log("hello");
     if (e.target.classList.contains("seat")) {
       let prevColor = e.target.getAttribute("data-color");
-      // console.log(prevColor);
+
       if (prevColor != 0 && prevColor != 1) {
         //  locationValue = locationSelected.value;
         let deskString = e.target.innerText;
         deskRow = deskString[0];
         let lengthString = deskString.length;
         deskNumber = parseInt(deskString.slice(1, lengthString));
-
+        // console.log("i am in");
         e.target.style.backgroundColor = deskColor[3];
         e.target.setAttribute("data-color", 3);
-        if (prevSelected !== undefined) {
+        //   console.log(prevSelected);
+        if (prevSelected !== undefined && prevSelected !== "") {
           prevSelected.style.backgroundColor = deskColor[2];
           //  console.log(prevSelected);
           prevSelected.setAttribute("data-color", 2);
         }
-
+        console.log(e.target.getAttribute("data-color"));
         prevSelected = e.target;
       }
     }
@@ -71,6 +82,9 @@ const eventListeners = () => {
       if (prevColor == 3 && prevSelected !== e.target) {
         e.target.style.backgroundColor = deskColor[2];
         e.target.setAttribute("data-color", 2);
+      } else {
+        // console.log(prevSelected, e.target);
+        //console.log("failed");
       }
     });
   });

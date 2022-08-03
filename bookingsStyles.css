@@ -13,7 +13,7 @@ body{
 .top-nav{
     background-color: black;
     position: relative;
-    right:44%;
+    right:40%;
     border-style: groove;
     border-radius: 0.8rem;
 }
@@ -43,14 +43,12 @@ background-color: rgb(240, 240, 240);
 justify-content:space-between;
 margin-bottom: 100px;
 }
-
 .logo{
-position: relative;
-left:30px;
-padding-top: 3.5px;
-
-}
-
+    position: relative;
+    left:30px;
+    padding-top: 4px;
+    
+    }
 
 
 .calendar-section{
@@ -195,4 +193,29 @@ padding:20px 38px 20px 38px;
     padding-top:16px;
     border-radius: 0.3rem;
     font-size: 2.2rem;
+}
+.calendar-seat{
+    background-color: white;
+    border-radius: 8px;
+}
+.calendar-seat:hover{
+    background-color: rgb(226, 224, 224) ;
+}
+.hidden{
+    visibility: hidden;
+}
+
+.submit-buttons{
+    text-align: center;
+}
+
+.form-buttons{
+    font-size: 2rem;
+    margin-right:10px ;
+}
+.desk-error{
+    font-size: 1.5rem;
+    color: red;
+    position: relative;
+    right: 30px;
 }

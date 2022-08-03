@@ -18,12 +18,14 @@
              <nav class="top-nav">
 
                 <a class="home" href="/index.html">Home</a>
-                <a class="bookings" href="./bookings.html">Bookings</a>
+                <a class="bookings" href="./bookings.html">My Bookings</a>
              </nav>
                 
              
     </header>
-
+    <section class="form-header">
+            <h1 class="form-header-text">Desk Booking</h1>
+    </section>
 
 
     <section class="select-location">
@@ -34,8 +36,10 @@
             <option value="Bangalore" class="option-location" selected=true>Bangalore</option>
             <option value="Gurgaon" class="option-location" >Gurgaon</option>
         </select>
-        <br/>
-        <input type="submit" class="submit-location">
+        
+        <button class="submit-location form-buttons">Next</button>
+        
+      
     </section>
 
 
@@ -44,7 +48,13 @@
 
         <label for="date-selected" >Select Date:</label>
         <input type="date" id="date-selected" name="date-selected"><br/>
-        <input type="submit" class="submit-date">
+        <label class="date-error hidden">Date cannot be empty</label>
+        <div class="date-buttons">
+            <button class="back-location form-buttons">Back</button>
+            <button class="submit-date form-buttons ">Next</button>
+            
+        </div>
+  
     
     
     </section>
@@ -66,7 +76,12 @@
            
         </section>
        </div>
-       <input type="submit" class="submit-desk">
+       <div class="submit-buttons">
+        <label class="desk-error hidden">Invalid desk</label>
+        <button class="back-seat form-buttons">Back</button>
+       <input type="submit" class="submit-desk form-buttons">
+       
+    </div>
     </section>
     <script src='./js/index.js' type="module"></script>
     <script src='./js/data.js' type="module"></script>

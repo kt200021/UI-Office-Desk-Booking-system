@@ -5,6 +5,9 @@ const locationElement = document.querySelector(".select-location");
 const dateElement = document.querySelector(".select-date");
 const deskElement = document.querySelector(".select-desk");
 const seatElements = document.querySelectorAll(".seat");
+const backLocation = document.querySelector(".back-location");
+const backSeat = document.querySelector(".back-seat");
+
 let locationSelected = document.querySelector("#location");
 let monthSelected;
 let dateSelected = document.querySelector("#date-selected");
@@ -30,17 +33,26 @@ const Hide = (element) => {
 const submitLocation = document.querySelector(".submit-location");
 const submitDate = document.querySelector(".submit-date");
 const submitDesk = document.querySelector(".submit-desk");
-
+const dateError = document.querySelector(".date-error");
+const deskError = document.querySelector(".desk-error");
 submitLocation.addEventListener("click", (e) => {
   Hide(locationElement);
   Show(dateElement);
 });
 
 submitDate.addEventListener("click", (e) => {
-  Hide(dateElement);
-  Show(deskElement);
-
   let dateString = dateSelected.value;
+
+  if (!dateString) {
+    dateError.classList.remove("hidden");
+    return;
+  }
+  if (!dateError.classList.contains("hidden")) {
+    dateError.classList.add("hidden");
+  }
+
+  Hide(dateElement);
+
   monthValue = dateString[5] + dateString[6];
   monthValue = parseInt(monthValue);
   dateValue = dateString[8] + dateString[9];
@@ -50,7 +62,9 @@ submitDate.addEventListener("click", (e) => {
 
   const deskLayout = blrData[monthValue][dateValue];
   displayDesk(deskLayout);
+
   eventListeners();
+  Show(deskElement);
 });
 
 const HomePage = () => {
@@ -67,6 +81,13 @@ submitDesk.addEventListener("click", (e) => {
   //   console.log("Location Selected:", locationValue);
   //   console.log("date selected:", dateValue, "/", monthValue, "/2022");
   //   console.log("seat selected", deskRow + deskNumber);
+  if (!getRow() || !getCol()) {
+    deskError.classList.remove("hidden");
+    return;
+  }
+  if (!deskError.classList.contains("hidden")) {
+    deskError.classList.add("hidden");
+  }
   let newBooking = {
     row: getRow(),
     col: getCol(),
@@ -78,4 +99,13 @@ submitDesk.addEventListener("click", (e) => {
   addBooking(newBooking);
   modifyDesk(newBooking, 0);
   HomePage();
+});
+backLocation.addEventListener("click", () => {
+  Hide(dateElement);
+  Show(locationElement);
+});
+backSeat.addEventListener("click", () => {
+  dateValue = "";
+  Hide(deskElement);
+  Show(dateElement);
 });

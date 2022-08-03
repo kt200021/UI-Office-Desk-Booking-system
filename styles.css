@@ -13,7 +13,7 @@ body{
 .top-nav{
     background-color: black;
     position: relative;
-    right:44%;
+    right:40%;
     border-style: groove;
     border-radius: 0.8rem;
 }
@@ -47,7 +47,7 @@ margin-bottom: 100px;
 .logo{
 position: relative;
 left:30px;
-padding-top: 3.5px;
+padding-top: 4px;
 
 }
 
@@ -64,6 +64,7 @@ padding-top: 3.5px;
 }
 .seat:hover{
     background-color: rgb(112, 239, 110);
+    cursor: pointer;
 }
 .select-desk{
     border-radius: 2rem;
@@ -96,20 +97,29 @@ padding:20px 38px 20px 38px;
 }
 .seat{
     width:10%;
-    height:50px;
+    height:65px;
     margin:0px 10px 0px 10px;
     background-color: white;
     text-align: center;
     
-    padding-top:16px;
+ 
     border-radius: 0.3rem;
     font-size: 2.2rem;
+}
+.seat-text{
+position: relative;
+top:20px;
+
 }
 
 
 
 
 
+.form-header-text{
+    font-size: 3rem;
+   text-align: center;
+}
 
 .location-label{
     font-size: 2.5rem;
@@ -153,9 +163,10 @@ padding:20px 38px 20px 38px;
 #date-selected{
     font-size: 2rem;
 }
-.submit-date,.submit-location{
+.submit-date,.submit-location,.back-location{
+    position: relative;
     font-size: 2rem;
-    margin-top: 20px;
+    top:30px
     
 }
 .submit-date:hover{
@@ -165,4 +176,29 @@ padding:20px 38px 20px 38px;
 .hide{
     display: none;
 }
-
+.back-seat,.submit-desk{
+    font-size: 2rem;
+}
+.submit-buttons{
+   
+    text-align: center;
+}
+.form-buttons:hover{
+    background-color: rgb(143, 140, 140);;
+}
+.date-error{
+    font-size: 1.5rem;
+    position: relative;
+    left:40px;
+    top:4px;
+    color: red;
+}
+.desk-error{
+    font-size: 1.5rem;
+    color: red;
+    position: relative;
+    right: 30px;
+}
+.hidden{
+    visibility: hidden;
+}
